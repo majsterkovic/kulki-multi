@@ -1,58 +1,8 @@
-#include <iostream>
-#include <iomanip>
-#include <chrono>
-#include <ctime>
-#include <thread>
-#include <random>
+#include "definicje.hpp"
 
 //kod 0 = 48
 //kod ░ = 176
-using namespace std;
 bool wygrana = false;
-
-int sprawdzenie(unsigned char plansza[12][12])
-{
-    for(int j=0; j<11; j++)
-    {
-
-
-
-    for(int i=0;i<11;i++)
-    {
-        if
-        (
-            ((plansza[j][i]==plansza[j][i+1]) && (plansza[j][i+2] == plansza[j][i+3]) && (plansza[j][i]==plansza[j][i+3]) && (plansza[j][i]=='X')) ||
-            ((plansza[i][j]==plansza[i+1][j]) && (plansza[i+2][j] == plansza[i+3][j]) && (plansza[i][j]==plansza[i+3][j]) && (plansza[i][j]=='X')) ||
-            ((plansza[i][j]==plansza[i+1][j+1]) && (plansza[i+2][j+2] == plansza[i+3][j+3]) && (plansza[i][j]==plansza[i+3][j+3]) && (plansza[i][j]=='X'))
-
-        )
-           {
-              wygrana = true;
-              cout << "Wygrales! Gitara siema!" << endl;
-           }
-
-           if
-        (
-            ((plansza[j][i]==plansza[j][i+1]) && (plansza[j][i+2] == plansza[j][i+3]) && (plansza[j][i]==plansza[j][i+3]) && (plansza[j][i]=='O')) ||
-            ((plansza[i][j]==plansza[i+1][j]) && (plansza[i+2][j] == plansza[i+3][j]) && (plansza[i][j]==plansza[i+3][j]) && (plansza[i][j]=='O')) ||
-            ((plansza[i][j]==plansza[i+1][j+1]) && (plansza[i+2][j+2] == plansza[i+3][j+3]) && (plansza[i][j]==plansza[i+3][j+3]) && (plansza[i][j]=='O'))
-
-        )
-           {
-              wygrana = true;
-              cout << "Wygral komputer ty smieciu" << endl;
-           }
-           /*jak działa to nie ruszać*/
-
-
-
-
-    }
-
-    }
-return wygrana;
-}
-
 
 void kropki(int l)
 {
@@ -165,7 +115,8 @@ int main()
 
     do{
 
-    cout << "\a";
+    //cout << "\a";
+    //Beep(1244, 1000);
     gracz(plansza);
     planszuj(plansza);
     sprawdzenie(plansza);
@@ -173,7 +124,7 @@ int main()
     komputer(plansza);
     planszuj(plansza);
     sprawdzenie(plansza);
-    cout << "Uwaga, czyszczenie konsoli za 8 sekund!" << endl;
+    // cout << "Uwaga, czyszczenie konsoli za 8 sekund!" << endl;
     kropki(3);
     // system("cls");
     }while(wygrana==false);
