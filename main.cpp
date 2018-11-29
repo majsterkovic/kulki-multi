@@ -44,11 +44,13 @@ void planszuj(unsigned char plansza[12][12])
     cout << endl;
 }
 
-void gracz(unsigned char plansza[12][12])
+void gracz(unsigned char plansza[12][12], int gracz)
 {
     int x;
     int y;
     bool b = 1;
+
+    planszuj(plansza);
 
     do{
     cout << "Gdzie chcesz postawic swoja kulke? Podaj wspolrzedne [wiersz i kolumna]: ";
@@ -58,8 +60,13 @@ void gracz(unsigned char plansza[12][12])
     y = y+1;
     if((plansza[y][x] == 176) && (plansza[y+1][x] == '0' || plansza[y+1][x] == 'O' || plansza[y+1][x] == 'X'))
         {
+            if(gracz == 1)
             plansza[y][x] = 'X';
+            else if(gracz ==2)
+            plansza[y][x] = 'O';
             b = 0;
+            Beep(1000,1000);
+            planszuj(plansza);
         }
     else
     {
@@ -68,7 +75,7 @@ void gracz(unsigned char plansza[12][12])
     }while(b==1);
 }
 
-int komputer(unsigned char plansza[12][12])
+/* int komputer(unsigned char plansza[12][12])
 {
     int x, y;
     int M = 0;
@@ -93,12 +100,12 @@ int komputer(unsigned char plansza[12][12])
 
     }while(b==1 && M<1000);
 
-}
+} */
 
 int main()
 {
     srand(time(NULL));
-    cout << "Witaj w grze w kulki xD" << endl;
+    cout << "Witaj w grze w kulki xD" << endl << endl << "\a" ;
     unsigned char plansza[12][12];
     wypelnijplansze(plansza);
 
@@ -107,29 +114,42 @@ int main()
         for(int h=1; h<11; h++)
         {
             plansza[g][h] = 176;
-            cout << "|" << plansza[g][h];
+            // cout << "|" << plansza[g][h];
         }
-        cout << "|" << endl;
+        // cout << "|" << endl;
     }
-    cout << endl;
+    // cout << endl;
+
+    //planszuj(plansza);
 
     do{
 
-    //cout << "\a";
-    Beep(1244, 1000);
-    gracz(plansza);
-    planszuj(plansza);
+    gracz(plansza, 1);
     sprawdzenie(plansza);
     if(wygrana==true) break;
-    komputer(plansza);
-    planszuj(plansza);
-    sprawdzenie(plansza);
-    // cout << "Uwaga, czyszczenie konsoli za 8 sekund!" << endl;
+
+    else
+    {
+    cout << "Uwaga, czyszczenie konsoli za 3 sekundy!" << endl;
     kropki(3);
-    // system("cls");
+    system("cls");
+    }
+
+
+    gracz(plansza, 2);
+    sprawdzenie(plansza);
+
+    if(wygrana == false)
+    {
+    cout << "Uwaga, czyszczenie konsoli za 3 sekundy!" << endl;
+    kropki(3);
+    system("cls");
+    }
+
+
     }while(wygrana==false);
 
-    
+
     cout << "Dziekuje za gre!";
     char pomoc;
     cin >> pomoc;
