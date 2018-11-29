@@ -9,9 +9,9 @@ int sprawdzenie(unsigned char plansza[12][12])
     {
         if
         (
-            ((plansza[j][i]==plansza[j][i+1]) && (plansza[j][i+2] == plansza[j][i+3]) && (plansza[j][i]==plansza[j][i+3]) && ((plansza[i][j]=='X') || (plansza[i][j]=='O'))) ||
+            ((plansza[j][i]==plansza[j][i+1]) && (plansza[j][i+2] == plansza[j][i+3]) && (plansza[j][i]==plansza[j][i+3]) && ((plansza[j][i]=='X') || (plansza[j][i]=='O'))) ||
             ((plansza[i][j]==plansza[i+1][j]) && (plansza[i+2][j] == plansza[i+3][j]) && (plansza[i][j]==plansza[i+3][j]) && ((plansza[i][j]=='X') || (plansza[i][j]=='O'))) ||
-            ((plansza[i][j]==plansza[i+1][j+1]) && (plansza[i+2][j+2] == plansza[i+3][j+3]) && (plansza[i][j]==plansza[i+3][j+3]) && ((plansza[i][j]=='X') || (plansza[i][i]=='O'))) ||
+            ((plansza[i][j]==plansza[i+1][j+1]) && (plansza[i+2][j+2] == plansza[i+3][j+3]) && (plansza[i][j]==plansza[i+3][j+3]) && ((plansza[i][j]=='X') || (plansza[i][j]=='O'))) ||
             ((plansza[i][j]==plansza[i-1][j+1]) && (plansza[i-2][j+2] == plansza[i-3][j+3]) && (plansza[i][j]==plansza[i-3][j+3]) && ((plansza[i][j]=='X') || (plansza[i][j]=='O')))
         )
            {
@@ -23,7 +23,6 @@ int sprawdzenie(unsigned char plansza[12][12])
            }
 
            /*jak działa to nie ruszać*/
-        /*ruszyłem i działa*/
     }
     }
 return wygrana;
