@@ -116,7 +116,7 @@ int main()
     do{
 
     //cout << "\a";
-    //Beep(1244, 1000);
+    Beep(1244, 1000);
     gracz(plansza);
     planszuj(plansza);
     sprawdzenie(plansza);
@@ -129,5 +129,9 @@ int main()
     // system("cls");
     }while(wygrana==false);
 
+    
+    cout << "Dziekuje za gre!";
+    char pomoc;
+    cin >> pomoc;
     return 0;
 }
