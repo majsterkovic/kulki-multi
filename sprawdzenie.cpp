@@ -1,14 +1,16 @@
 #include "definicje.hpp"
 
 extern bool wygrana;
-void pokazwygrana(unsigned char plansza[12][12], int i, int j)
+void pokazwygrana(unsigned char plansza[12][12], int z, int w)
 {
-   if(plansza[i][j]=='X')
+   if(plansza[z][w]=='X')
         {
+            PlaySound("coin.wav", NULL, SND_ASYNC);
             cout << "Wygral gracz X!" << endl;
         }
-    else if(plansza[i][j]=='O')
+    else if(plansza[z][w]=='O')
         {
+            PlaySound(".wav", NULL, SND_ASYNC);
             cout << "Wygral gracz O!" << endl;
         }
 }
