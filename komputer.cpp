@@ -1,6 +1,11 @@
 #include "definicje.hpp"
 
-int komputer(unsigned char plansza[12][12])
+/*
+extern char Xx;
+extern char Oo;
+
+
+ int komputer(unsigned char plansza[12][12])
 {
     int x, y;
     int M = 0;
@@ -9,9 +14,9 @@ int komputer(unsigned char plansza[12][12])
     x = (std::rand() % 10) + 1;
     y = (std::rand() % 10) + 1;
 
-    if((plansza[y][x] == 176) && (plansza[y+1][x] == '0' || plansza[y+1][x] == 'O' || plansza[y+1][x] == 'X'))
+    if((plansza[y][x] == 176) && (plansza[y+1][x] == '0' || plansza[y+1][x] == Oo || plansza[y+1][x] == Xx))
         {
-            plansza[y][x] = 'O';
+            plansza[y][x] = Oo;
             b = 0;
         }
     else
@@ -25,4 +30,4 @@ int komputer(unsigned char plansza[12][12])
 
     }while(b==1 && M<1000);
 
-}
+} */

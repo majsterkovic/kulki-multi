@@ -3,7 +3,7 @@
 
 #include <cstdlib> // losowanko
 #include <iostream> //cin cout
-#include <iomanip> // ³adne wyœwietlanie
+#include <iomanip> // Â³adne wyÅ“wietlanie
 #include <chrono> // zatrzymywanie
 #include <ctime> // losowanie
 #include <thread> // zatrzymywanie
@@ -18,5 +18,9 @@ void kropki(int l);
 int wypelnijplansze(unsigned char plansza[12][12]);
 void planszuj(unsigned char plansza[12][12]);
 int komputer(unsigned char plansza[12][12]);
+int gracz(unsigned char plansza[12][12], int gracz);
+bool sprawdzPlansze(unsigned char plansza[12][12]);
+void wybierzskin(int g);
+
 
 #endif
