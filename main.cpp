@@ -1,6 +1,6 @@
 #include "definicje.hpp"
 
-//kod 0 = 4
+//kod 0 = 48
 //kod ░ = 176
 bool wygrana = false;
 int x;
